@@ -17,7 +17,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         // post image
         let post = PFObject(className: "Posts")
         // Create a dictionary
-        post["cpation"] = commentField.text!
+        post["caption"] = commentField.text!
         post["author"] = PFUser.current()!
         // save image as png and convert it as a binary object
         let imageData = imageView.image!.pngData()
