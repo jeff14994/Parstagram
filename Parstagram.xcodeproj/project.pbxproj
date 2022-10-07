@@ -15,6 +15,7 @@
 		FF56788228F02B3500AF7262 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF56788028F02B3500AF7262 /* LaunchScreen.storyboard */; };
 		FFBD73FD28F02E140083F810 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBD73FC28F02E140083F810 /* LoginViewController.swift */; };
 		FFBD73FF28F02E400083F810 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBD73FE28F02E400083F810 /* FeedViewController.swift */; };
+		FFBD740128F092100083F810 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBD740028F092100083F810 /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FF56788328F02B3500AF7262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFBD73FC28F02E140083F810 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FFBD73FE28F02E400083F810 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		FFBD740028F092100083F810 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				FF56787528F02B3400AF7262 /* AppDelegate.swift */,
 				FF56787728F02B3400AF7262 /* SceneDelegate.swift */,
 				FF56787B28F02B3400AF7262 /* Main.storyboard */,
+				FFBD740028F092100083F810 /* CameraViewController.swift */,
 				FFBD73FC28F02E140083F810 /* LoginViewController.swift */,
 				FFBD73FE28F02E400083F810 /* FeedViewController.swift */,
 				FF56787E28F02B3500AF7262 /* Assets.xcassets */,
@@ -210,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFBD73FD28F02E140083F810 /* LoginViewController.swift in Sources */,
+				FFBD740128F092100083F810 /* CameraViewController.swift in Sources */,
 				FF56787628F02B3400AF7262 /* AppDelegate.swift in Sources */,
 				FFBD73FF28F02E400083F810 /* FeedViewController.swift in Sources */,
 				FF56787828F02B3400AF7262 /* SceneDelegate.swift in Sources */,
