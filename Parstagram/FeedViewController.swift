@@ -29,6 +29,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	var posts = [PFObject]()
 	let commentBar = MessageInputBar()
     var showsCommentBar = false
+    var selectedPost: PFObject!
 	override func viewDidLoad() {
         super.viewDidLoad()
 		tableView.delegate = self
@@ -111,6 +112,21 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 	}
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
         // create the comment
+        let comment = PFObject(className: "Comments")
+        comment["text"] = text
+        comment["post"] = selectedPost
+        comment["author"] = PFUser.current()!
+        // add a commnets column in the post table and add the comment id
+        selectedPost.add(comment, forKey: "comments")
+        // save the post
+        selectedPost.saveInBackground { (success, error) in
+            if success {
+                print("Comment saved")
+            } else {
+                print("Error saving comment")
+            }
+        }
+        tableView.reloadData()
         // clear and dismiss the input bar
         showsCommentBar = false
         becomeFirstResponder()
@@ -149,23 +165,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             becomeFirstResponder()
             // becomfirstresponder is the focus
             commentBar.inputTextView.becomeFirstResponder()
+            // remember the post that is selected
+            selectedPost = post
             
         }
-        // let post = posts[indexPath.row]
-        // let comment = PFObject(className: "Comments")
-        // comment["text"] = "This is a random comment"
-        // comment["post"] = post
-        // comment["author"] = PFUser.current()!
-        // // add a commnets column in the post table and add the comment id
-        // post.add(comment, forKey: "comments")
-        // // save the post
-        // post.saveInBackground { (success, error) in
-        //     if success {
-        //         print("Comment saved")
-        //     } else {
-        //         print("Error saving comment")
-        //     }
-        // }
         
     }
 }
