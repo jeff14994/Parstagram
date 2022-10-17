@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Parstagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Parstagram" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,7 +81,7 @@
         <!--Feed View Controller-->
         <scene sceneID="EGS-IG-3Ze">
             <objects>
-                <viewController id="n5Q-TH-80v" customClass="FeedViewController" customModule="Parstagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="n5Q-TH-80v" customClass="FeedViewController" customModule="Parstagram" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="etS-ko-wb7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -151,6 +151,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DSa-7Y-p5U">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="J5V-lQ-b70">
+                            <connections>
+                                <action selector="onLogoutButton:" destination="n5Q-TH-80v" id="1zV-G2-4Ha"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="+" image="insta_camera_btn" id="ldq-nT-Jss">
                             <connections>
                                 <segue destination="wAh-kp-8ly" kind="presentation" id="eYF-y2-Sp4"/>

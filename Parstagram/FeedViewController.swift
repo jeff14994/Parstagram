@@ -33,10 +33,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 				self.posts = posts!
 				self.tableView.reloadData()
 			}
-			
 		}
-		
-		
 	}
     
 
@@ -58,4 +55,15 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 		return posts.count
 	}
 
+    @IBAction func onLogoutButton(_ sender: Any) {
+        print("logout triggered!")
+        PFUser.logOut()
+        // parse the xml
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        // get the loginViewController
+        let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+        // get the shared object
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else { return }
+        delegate.window?.rootViewController = loginViewController
+    }
 }
