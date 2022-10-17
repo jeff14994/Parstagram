@@ -8,6 +8,7 @@
 import UIKit
 import Parse
 import AlamofireImage
+import CryptoKit
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	
 
@@ -65,5 +66,24 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         // get the shared object
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else { return }
         delegate.window?.rootViewController = loginViewController
+    }
+    // Implenent comments
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let post = posts[indexPath.row]
+        let comment = PFObject(className: "Comments")
+        comment["text"] = "This is a random comment"
+        comment["post"] = post
+        comment["author"] = PFUser.current()!
+        // add a commnets column in the post table and add the comment id
+        post.add(comment, forKey: "comments")
+        // save the post
+        post.saveInBackground { (success, error) in
+            if success {
+                print("Comment saved")
+            } else {
+                print("Error saving comment")
+            }
+        }
+        
     }
 }
